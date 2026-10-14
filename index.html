@@ -1,609 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gomathi Muthu | Early Years & SEND Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #2d6a4f;
-      --primary-hover: #1b4332;
-      --secondary: #d8f3dc;
-      --accent: #e9c46a;
-      --text-dark: #1f2937;
-      --text-muted: #4b5563;
-      --bg-light: #f8faf9;
-      --white: #ffffff;
-      --border: #e5e7eb;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      --radius: 12px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 3rem 2rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero h2 {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .tag {
-      background: #f3f4f6;
-      color: var(--text-muted);
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-    }
-
-    .btn-outline {
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--secondary);
-    }
-
-    /* Stats Section */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .stat-card {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      border-bottom: 4px solid var(--primary);
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    /* Section Component */
-    .section {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 2px solid var(--secondary);
-      padding-bottom: 0.5rem;
-    }
-
-    /* Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .timeline-item {
-      border-left: 3px solid var(--primary);
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .timeline-year {
-      font-weight: 800;
-      color: var(--primary);
-      font-size: 0.9rem;
-    }
-
-    .timeline-role {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .timeline-company {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .timeline-item ul {
-      padding-left: 1.2rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Tables */
-    .table-responsive {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    th, td {
-      padding: 0.8rem 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-    }
-
-    th {
-      background: var(--secondary);
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* Grid Layouts */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.2rem;
-      background: #fafafa;
-    }
-
-    .card h4 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .card p, .card ul {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* Downloads Grid */
-    .downloads-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-
-    .download-card {
-      border: 1px solid var(--border);
-      padding: 1rem;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      background: #ffffff;
-    }
-
-    .download-card h5 {
-      font-size: 0.95rem;
-      color: var(--text-dark);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 1.8rem; }
-      .nav-links { display: none; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-brand">Gomathi Muthu</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#specialisation">Early Years & SEND</a></li>
-      <li><a href="#curriculum">Curriculum</a></li>
-      <li><a href="#downloads">Portfolio Documents</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
-
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <span class="hero-badge">Qualified Early Years Educator & SENCO (NCFE CACHE Level 3)</span>
-      <h1>Gomathi Muthu</h1>
-      <h2>Early Years & Inclusive Education Professional</h2>
-      <p style="max-width: 750px; margin: 0 auto 1.5rem; color: var(--text-muted);">
-        Creating safe, engaging, and inclusive learning experiences where every child can learn, participate, and thrive.
-      </p>
-
-      <div class="tag-container">
-        <span class="tag">Early Years Education</span>
-        <span class="tag">SEND Support</span>
-        <span class="tag">Inclusive Learning</span>
-        <span class="tag">Child Development</span>
-        <span class="tag">Safeguarding</span>
-        <span class="tag">📍 Chennai, India</span>
-        <span class="tag">✈️ Open to Relocation</span>
-      </div>
-
-      <div class="btn-group">
-        <a href="https://drive.google.com/file/d/1ubwO4L4TNQwYZMPldOxGWVrU8LS_YP8N/view?usp=drive_link" target="_blank" class="btn btn-primary">📄 Download CV</a>
-        <a href="#downloads" class="btn btn-outline">📂 Explore Portfolio Docs</a>
-        <a href="#contact" class="btn btn-outline">💬 Let's Connect</a>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">9+</div>
-        <div class="stat-label">Years in Education Sector</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Education Organisations</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">360+</div>
-        <div class="stat-label">Learners Supported</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">250+</div>
-        <div class="stat-label">School Leaders Trained</div>
-      </div>
-    </div>
-
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-      <h3 class="section-title">💼 Professional Experience</h3>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-year">2023 – Present</div>
-          <div class="timeline-role">Operations Lead – Education & Programme Operations</div>
-          <div class="timeline-company">Freshworks STS Software Academy | Chennai, India</div>
-          <ul>
-            <li>Managed end-to-end admissions, academic support, safeguarding, and career placement for 360+ students[cite: 1].</li>
-            <li>Achieved an 80%–85% placement rate year-on-year by driving student readiness and mentorship initiatives[cite: 1].</li>
-            <li>Supported learners through inclusive practices, progress monitoring, and targeted interventions.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2022</div>
-          <div class="timeline-role">Support Trainer – Leadership & Teacher Development</div>
-          <div class="timeline-company">Chrysalis | Chennai, India</div>
-          <ul>
-            <li>Trained 250+ School Principals / Headteachers on leadership and inclusive classroom strategies[cite: 1].</li>
-            <li>Developed simplified progress-tracking systems to evaluate leadership practices and classroom delivery[cite: 1].</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2020 – 2022</div>
-          <div class="timeline-role">Class Analyst – Academic Quality & Learning Improvement</div>
-          <div class="timeline-company">WhiteHat Jr | Mumbai, India</div>
-          <ul>
-            <li>Audited 500+ live Mathematics classes to elevate classroom delivery and inclusion[cite: 1].</li>
-            <li>Analyzed student performance data to recommend personalized, differentiated learning approaches[cite: 1].</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2017 – 2018</div>
-          <div class="timeline-role">Training & Development Associate</div>
-          <div class="timeline-company">Bhumi | Chennai, India</div>
-          <ul>
-            <li>Designed activity-based learning programs for primary students (Ages 8–14)[cite: 1].</li>
-            <li>Trained volunteer educators on inclusive teaching techniques and classroom management[cite: 1].</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2015 – 2017</div>
-          <div class="timeline-role">Teacher & Curriculum Designer</div>
-          <div class="timeline-company">Avanti Fellows | Chennai, India</div>
-          <ul>
-            <li>Taught Secondary Mathematics using interactive, visual, and differentiated instruction[cite: 1].</li>
-            <li>Created structured curriculum materials designed for 4 distinct learning styles[cite: 1].</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Early Years & SEND Specialisation -->
-    <section class="section" id="specialisation">
-      <h3 class="section-title">♿ Early Years & SEND Specialisation</h3>
-      <div class="grid-2">
-        <div class="card">
-          <h4>🌱 EYFS Framework & Pedagogy</h4>
-          <p>Practical application of the 7 Areas of Learning, play-based exploration, 2-year progress checks, and early phonics/literacy blending[cite: 1].</p>
-        </div>
-        <div class="card">
-          <h4>♿ SEND Code of Practice (2015)</h4>
-          <p>Hands-on execution of the Graduated Approach (Assess-Plan-Do-Review), IEP/EHCP goal setting, and multi-agency reporting[cite: 1].</p>
-        </div>
-        <div class="card">
-          <h4>🎨 Differentiated & Sensory Interventions</h4>
-          <p>Adapting activities for Communication & Interaction, Cognition & Learning, SEMH, and Sensory/Physical needs[cite: 1].</p>
-        </div>
-        <div class="card">
-          <h4>👀 Observation & Milestone Tracking</h4>
-          <p>Conducting detailed observational logs, setting developmental targets, and monitoring holistic growth[cite: 1].</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Curriculum Sample -->
-    <section class="section" id="curriculum">
-      <h3 class="section-title">📚 Sample Curriculum Framework: "Nature Around Me"</h3>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>Day</th>
-              <th>Focus Area</th>
-              <th>Key Learning Activity</th>
-              <th>EYFS Focus Area</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Day 1</strong></td>
-              <td>Animals Around Me</td>
-              <td>Follow the Footprints & Animal Sound Movement[cite: 1]</td>
-              <td>Physical Development & C&L[cite: 1]</td>
-            </tr>
-            <tr>
-              <td><strong>Day 2</strong></td>
-              <td>Birds Around Me</td>
-              <td>Bird Rescue, Nest Exploration & Playdough Hunt[cite: 1]</td>
-              <td>Fine/Gross Motor & UW[cite: 1]</td>
-            </tr>
-            <tr>
-              <td><strong>Day 3</strong></td>
-              <td>Plants & Leaves</td>
-              <td>Leaf Texture Sensory Tray & Shape Sorting</td>
-              <td>Understanding the World</td>
-            </tr>
-            <tr>
-              <td><strong>Day 4</strong></td>
-              <td>Water & Bugs</td>
-              <td>Mini-Beast Magnifying Glass Search</td>
-              <td>Cognition & Problem Solving</td>
-            </tr>
-            <tr>
-              <td><strong>Day 5</strong></td>
-              <td>Nature Celebration</td>
-              <td>Nature Crown Making & Circle Time Reflection</td>
-              <td>Expressive Arts & Design</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Downloads Section -->
-    <section class="section" id="downloads">
-      <h3 class="section-title">📁 Portfolio Downloads & Evidence</h3>
-      <div class="downloads-grid">
-
-        <div class="download-card">
-          <h5>📄 Curriculum Vitae (CV)</h5>
-          <a href="https://drive.google.com/file/d/1ubwO4L4TNQwYZMPldOxGWVrU8LS_YP8N/view?usp=drive_link" target="_blank" class="btn btn-primary btn-sm">Download PDF</a>
-        </div>
-
-        <div class="download-card">
-          <h5>✉️ Cover Letter</h5>
-          <a href="https://docs.google.com/document/d/11MVRvCdqtkIqwtX2syvr9tLq3_YyiQgdWMG1i5ZLwV4/edit?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Document</a>
-        </div>
-
-        <div class="download-card">
-          <h5>🔍 Observation Records (0–2 Yrs)</h5>
-          <a href="https://docs.google.com/document/d/1oiE8OMYVYZ7B1q3IKrCer3GnOj6tRdRZbfmxMA7Guz8/edit?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Document</a>
-        </div>
-
-        <div class="download-card">
-          <h5>🔍 Observation Records (2–6 Yrs)</h5>
-          <a href="https://docs.google.com/document/d/1KRuA1DDJfltwJckaxii4TNnrw8nLPOXo5K_E8g23fOQ/edit?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Document</a>
-        </div>
-
-        <div class="download-card">
-          <h5>📚 EYFS Lesson Plans</h5>
-          <a href="https://docs.google.com/document/d/1RldEnIEZQMSCDJIvYpNcNjp9eamCKMTaPX8ggNawvXU/edit?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Document</a>
-        </div>
-
-        <div class="download-card">
-          <h5>📑 SENCO Academic Work</h5>
-          <a href="https://docs.google.com/document/d/1sbC-Xg-QLDY8pBpaNCi9tl0q1hlWQmPWvtlXkvV60qg/edit?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Document</a>
-        </div>
-
-        <div class="download-card">
-          <h5>🎨 Student Work & Setup Photos</h5>
-          <a href="https://drive.google.com/file/d/1rdGEcrOv8asa6OF6Y09EREJf2o_627Hb/view?usp=sharing" target="_blank" class="btn btn-outline btn-sm">View Gallery</a>
-        </div>
-
-        <div class="download-card">
-          <h5>🎓 Academic Documents</h5>
-          <a href="https://drive.google.com/drive/folders/1FtXS7drSm9UpP7GKQnTcDmI9ryEGJGLP?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">View Certificates</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact" style="text-align: center;">
-      <h3 class="section-title" style="justify-content: center;">💬 Let's Connect</h3>
-      <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
-        I am open to international opportunities in Early Years Education, SEND support, and inclusive learning environments.
-      </p>
-      <div class="btn-group">
-        <a href="mailto:gomathimuthu.m@gmail.com" class="btn btn-primary">📧 Send an Email</a>
-        <a href="https://www.linkedin.com/in/gomathimuthu" target="_blank" class="btn btn-outline">🔗 Connect on LinkedIn</a>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    <p>© 2026 Gomathi Muthu. All Rights Reserved. Built for Early Years & SEND Practice.</p>
-  </footer>
-
-</body>
-</html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gomathi Muthu — Early Years & SEND Portfolio</title>
+<meta name="description" content="Hi, I'm Gomathi — an Early Years & SEND educator with 9+ years in education, helping every child find their own way to learn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FBF7F0;
+    --paper-2: #F4EDE1;
+    --ink: #2E2A26;
+    --muted: #5E564D;
+    --sage: #4F6F55;
+    --sage-soft: #DDE7DC;
+    --blue: #3F6683;
+    --blue-soft: #DCE6EF;
+    --terra: #A2553A;
+    --terra-soft: #F5E2D8;
+    --sun: #F2DFA7;
+    --line: #E3D9C8;
+    --hand: "Caveat", cursive;
+    --serif: "Fraunces", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.7 "Nunito", system-ui, sans-serif; overflow-x: hidden; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3rem); }
+  h3 { font-size: 1.3rem; }
+  p { margin: 0 0 1em; max-width: 64ch; }
+  a { color: var(--blue); }
+  :focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; border-radius: 4px; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 96px 0; position: relative; }
+  .hand { font-family: var(--hand); font-weight: 700; color: var(--terra); font-size: 1.6rem; line-height: 1.1; }
+  .kicker { font-family: var(--hand); font-size: 1.7rem; color: var(--terra); margin: 0 0 .1em; transform: rotate(-2deg); display: inline-block; }
+  .lead { font-size: 1.2rem; color: var(--muted); }
+  /* hand-drawn underline */
+  .scribble { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C 50 2, 100 12, 198 5' stroke='%23D9A441' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") bottom left / 100% .35em no-repeat; padding-bottom: .1em; }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 20; background: rgba(251,247,240,.94); backdrop-filter: blur(6px); }
+  header .wrap { display: flex; align-items: center; gap: 20px; height: 68px; }
+  .sig { font-family: var(--hand); font-weight: 700; font-size: 1.9rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  nav { margin-left: auto; overflow-x: auto; }
+  nav ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
+  nav a { display: block; padding: 8px 12px; border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: .95rem; white-space: nowrap; }
+  nav a:hover { background: var(--sage-soft); }
+  .menu-btn { display: none; }
+
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px; font-weight: 800; text-decoration: none; border: 2px solid var(--ink); color: var(--ink); background: transparent; transition: transform .15s, box-shadow .15s; cursor: pointer; }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+  .btn-fill { background: var(--sage); border-color: var(--sage); color: #fff; }
+  .btn-fill:hover { box-shadow: 4px 4px 0 var(--ink); color: #fff; }
+  .btn-sm { padding: 7px 16px; font-size: .9rem; }
+
+  /* HERO */
+  .hero { padding: 56px 0 110px; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center; }
+  .hello { font-family: var(--hand); font-size: 2.4rem; color: var(--terra); margin: 0; transform: rotate(-3deg); display: inline-block; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 400; margin-top: .1em; }
+  .hero h1 em { font-style: italic; color: var(--sage); }
+  .hero .intro { font-size: 1.2rem; color: var(--muted); max-width: 52ch; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 18px; font-weight: 700; color: var(--muted); font-size: .98rem; }
+
+  .polaroid-wrap { position: relative; justify-self: center; width: min(360px, 100%); }
+  .polaroid { background: #fff; padding: 14px 14px 64px; box-shadow: 0 18px 40px -18px rgba(46,42,38,.35), 0 2px 6px rgba(46,42,38,.08); transform: rotate(3deg); position: relative; }
+  .polaroid .pic { aspect-ratio: 4/5; background: linear-gradient(160deg, var(--sage-soft), var(--sun)); display: grid; place-items: center; text-align: center; font-family: var(--serif); font-size: 2.2rem; color: var(--sage); overflow: hidden; padding: 20px; }
+  .polaroid .pic img { width: 100%; height: 100%; object-fit: cover; }
+  .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--hand); font-size: 1.6rem; color: var(--ink); }
+  .tape { position: absolute; width: 110px; height: 30px; background: rgba(242,223,167,.85); top: -14px; left: 50%; transform: translateX(-50%) rotate(-4deg); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+  .note-arrow { position: absolute; left: -150px; bottom: 80px; width: 140px; text-align: right; z-index: 2; }
+  .note-arrow svg { display: block; margin-left: auto; }
+  .doodle { position: absolute; pointer-events: none; }
+
+  /* creds ribbon */
+  .ribbon { background: var(--ink); color: var(--paper); padding: 18px 0; }
+  .ribbon ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 36px; font-weight: 700; }
+  .ribbon li::before { content: "✦"; color: var(--sun); margin-right: 10px; }
+
+  /* STORY / APPROACH */
+  .story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+  .big-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.3; margin: 48px 0 0; position: relative; padding-top: 30px; }
+  .big-quote::before { content: "“"; position: absolute; top: -30px; left: -8px; font-size: 7rem; color: var(--sun); font-style: normal; line-height: 1; }
+
+  .notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1
